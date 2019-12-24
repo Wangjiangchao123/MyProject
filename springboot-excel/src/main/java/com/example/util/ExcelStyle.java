@@ -13,12 +13,15 @@ import org.apache.poi.ss.usermodel.IndexedColors;
  */
 public class ExcelStyle {
 
+    /**
+     * easyexcel  自定义样式
+     * @return
+     */
     public static HorizontalCellStyleStrategy styleWrite() {
         // 头的策略
         WriteCellStyle headWriteCellStyle = new WriteCellStyle();
         // 背景设置为红色
         headWriteCellStyle.setFillForegroundColor(IndexedColors.GREEN.getIndex());
-
 
         WriteFont headWriteFont = new WriteFont();
         //表头字体
