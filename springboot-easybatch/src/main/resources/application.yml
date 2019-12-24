@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: easybatch
+
+
+  datasource:
+    url: jdbc:mysql://106.15.207.173:3306/easybatch?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+
+xxl:
+  job:
+    admin:
+      #      job-admin 的地址
+      addresses: http://10.0.11.211:34870/orion-job-admin
+      #addresses: http://10.26.48.86:8887/orion-job-admin
+    executor:
+      appname: easybatch
+      ip:
+      port: 9999
+      logpath: /tmp/handler
+      logretentiondays: 1

@@ -1,0 +1,10 @@
+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(€§Š®ÿÿÿÿÿ
+…"squid:ClassVariableVisibilityCheck"RMake classa a static final constant or non-public and provide accessors if needed.(×ÀÓ¾úÿÿÿÿ
+Hsquid:S1444",Make this "public static classa" field final(×ÀÓ¾úÿÿÿÿ
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ŸÒ’‚ıÿÿÿÿ
+usquid:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(—à¯ÿÿÿÿÿ
