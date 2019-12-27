@@ -1,0 +1,11 @@
+------------------------------Java 内置对象 -------------------------------------
+1、Java的基本数据类型
+int、byte、long、short、float、double、boolean、char
+Java为每一个类型都提供了对应的包装类，他们都是Number（Java lang）的子类。这种由编译器特别支持的包装类称为装箱。
+
+
+
+2、Math 的 floor,round 和 ceil 方法实例比较
+floor 向下取整
+ceil  向上取整
+round 四舍五入取值
