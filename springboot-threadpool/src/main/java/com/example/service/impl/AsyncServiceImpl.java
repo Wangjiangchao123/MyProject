@@ -15,7 +15,8 @@ import org.springframework.stereotype.Service;
 public class AsyncServiceImpl  implements AsyncService {
 
     @Override
-    @Async
+    //taskExecutor   中配置线程池的方法
+    @Async("taskExecutor")
     public void excuteAsync() {
         log.info("开始执行异步线程");
         System.out.println(""+Thread.currentThread().getName());
