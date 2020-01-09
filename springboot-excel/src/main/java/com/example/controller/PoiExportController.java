@@ -2,14 +2,9 @@ package com.example.controller;
 
 import com.sun.deploy.net.URLEncoder;
 import io.swagger.annotations.Api;
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.xssf.usermodel.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -47,11 +42,22 @@ public class PoiExportController {
                 XSSFWorkbook wb = new XSSFWorkbook();
                 XSSFSheet sheet = wb.createSheet("sheet" + i);
                 XSSFRow row = sheet.createRow(0);
+                //第几列自动换行
+                sheet.autoSizeColumn(1);
+                //获取cellStyle的样式
+                XSSFCellStyle cellStyle = getXssfCellStyle(wb);
 
-                row.createCell(1).setCellValue("aaa");
+                row.createCell(1).setCellValue("学号");
                 XSSFCell cell = row.createCell(0);
-                cell.setCellValue("内容" + i);
+                cell.setCellValue("姓名");
+                cell.setCellStyle(cellStyle);
 
+
+                row.createCell(2).setCellValue("设置中文的自动列宽，也不是到对不对");
+                row.getCell(2).setCellStyle(cellStyle);
+
+                row.createCell(3).setCellValue("select * from LLToClaimDutyFee where clmno='\" + qLLClaimDetailSchema.getClmNo()");
+                row.getCell(3).setCellStyle(cellStyle);
                 //响应
                 response.setContentType("application/zip; charset=utf-8");
                 response.setHeader("Content-Disposition", "attachment; filename=" + URLEncoder.encode("911.zip", "UTF-8"));
@@ -81,7 +87,26 @@ public class PoiExportController {
         }
     }
 
+    private XSSFCellStyle getXssfCellStyle(XSSFWorkbook wb) {
+        //设置样式
+        XSSFFont font = wb.createFont();
+        font.setFontName("黑体");
+        font.setBold(true);
+        font.setFontHeightInPoints((short) 20);//设置字体大小
 
+        //总样式
+        XSSFCellStyle cellStyle = wb.createCellStyle();
+        cellStyle.setFont(font);
+        //设置自动换行
+        cellStyle.setWrapText(true);
+        return cellStyle;
+    }
+
+    /**
+     *
+     * @param response
+     * @throws IOException
+     */
     @RequestMapping(value = "/poizip1")
     public void poizip1(HttpServletResponse response) throws IOException {
         //response 输出流
@@ -117,6 +142,8 @@ public class PoiExportController {
             }
         }
     }
+
+
 
 }
 
