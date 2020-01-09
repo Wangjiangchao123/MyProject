@@ -9,7 +9,7 @@ import java.io.File;
  */
 public class FileUtil {
     public static String getPath() {
-        return FileUtil.class.getResource("/").getPath() + "/static/temp/";
+        return FileUtil.class.getResource("/").getPath() + "static/temp/";
     }
 
     public static File createNewFile(String pathName) {

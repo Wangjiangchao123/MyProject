@@ -19,6 +19,11 @@ public class AsyncServiceImpl  implements AsyncService {
     @Async("taskExecutor")
     public void excuteAsync() {
         log.info("开始执行异步线程");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println(""+Thread.currentThread().getName());
         log.info("结束执行异步线程");
     }

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+import static com.example.util.FileManager.download;
 import static com.example.util.FileManager.downloadFile;
 import static com.example.util.FileUtil.createNewFile;
 
@@ -49,8 +50,11 @@ public class PoiController {
         cell.setCellValue("籍贯");
         cell.setCellStyle(cellStyle);
 
+//以附件的形式下载
+//        downloadFile(response,file);
 
-        downloadFile(response,file);
+        download(response,FileUtil.getPath(),fileName);
+
 
     }
 
