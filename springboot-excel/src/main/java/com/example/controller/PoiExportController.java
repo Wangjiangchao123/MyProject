@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.sun.deploy.net.URLEncoder;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.xssf.usermodel.*;
@@ -31,6 +32,7 @@ public class PoiExportController {
      * @throws IOException
      */
     @RequestMapping(value = "/poizip")
+    @ApiOperation(value="以xlsx的方式   导出多个文件  压缩下载")
     public void poizip(HttpServletResponse response) throws IOException {
         //response 输出流
         ServletOutputStream out = response.getOutputStream();
