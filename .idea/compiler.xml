@@ -6,13 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="flowable" />
-        <module name="reflex-java" />
-        <module name="reg-java" />
-        <module name="springboot-excel" />
-        <module name="springboot-flowable" />
+        <module name="springboot-easyexcel" />
         <module name="springbooteasybatch" />
+        <module name="springboot-flowable" />
+        <module name="reg-java" />
+        <module name="flowable" />
+        <module name="springboot-excel" />
         <module name="springbooteasyexcel" />
+        <module name="reflex-java" />
+        <module name="springboot-threadpool" />
+        <module name="springboot-easybatch" />
+        <module name="springboot-mail" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -26,6 +30,8 @@
       <module name="reg-java" options="-parameters" />
       <module name="springboot-excel" options="-parameters" />
       <module name="springboot-flowable" options="-parameters" />
+      <module name="springboot-mail" options="-parameters" />
+      <module name="springboot-threadpool" options="-parameters" />
     </option>
   </component>
 </project>
