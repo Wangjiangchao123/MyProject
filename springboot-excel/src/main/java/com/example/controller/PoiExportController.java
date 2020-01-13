@@ -4,7 +4,9 @@ import com.sun.deploy.net.URLEncoder;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.xssf.usermodel.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -101,6 +103,20 @@ public class PoiExportController {
         cellStyle.setFont(font);
         //设置自动换行
         cellStyle.setWrapText(true);
+
+        //设置单元格  位置
+        cellStyle.setAlignment(HorizontalAlignment.CENTER);
+        //设置边框
+        cellStyle.setBorderBottom(BorderStyle.DASH_DOT);
+        cellStyle.setBorderLeft(BorderStyle.DASH_DOT_DOT);
+        cellStyle.setBorderTop(BorderStyle.DASHED);
+        cellStyle.setBorderRight(BorderStyle.DOUBLE);
+        cellStyle.setBorderLeft(BorderStyle.HAIR);
+        cellStyle.setBorderRight(BorderStyle.MEDIUM);
+
+
+
+
         return cellStyle;
     }
 
