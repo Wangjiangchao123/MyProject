@@ -51,9 +51,6 @@ public class DownloadController {
         }
         excelWriter.finish();
         downloadFile(response,file);
-
-
-
     }
 
 

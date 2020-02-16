@@ -18,8 +18,6 @@ public class DateDemo {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         String format = sdf.format(date);
 
-        boolean after = date.after(format);
-        System.out.println(after);
 
 
 

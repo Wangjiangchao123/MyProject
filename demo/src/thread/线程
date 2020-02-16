@@ -1,0 +1,12 @@
+1、实现多线程的方法
+  - 继承thread,实现runnable
+  - 通过Callable和FutureTask创建线程
+  - 通过线程池
+
+
+2、线程什么时候会阻塞？
+
+Running的时候，使用join()  或者sleep(),当join()中断或者sleep
+
+
+2、加锁的方法
