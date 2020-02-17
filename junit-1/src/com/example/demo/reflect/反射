@@ -1,0 +1,38 @@
+
+
+Field ： 成员变量
+    操作：
+       1、设置值
+                void set(Object obj,Object value);
+
+       2、获取值
+               void get(Object obj);
+
+       3、忽略访问呢权限修饰符的安全检查
+             setAccessible(true)   暴力反射
+
+
+
+Constructor：构造方法
+      创建对象：
+        newInstance
+
+        如果构造使用空参构造方法创建对象，
+
+
+Method： 方法
+     执行方法：
+     Object invoke(Object obj,Object ...args);
+     获取方法名称
+     String getName
+
+ -----------------------
+ 获取Class对象    （ClassLoader  类加载器  负责加载字节码文件到内存中）
+          1、Class.forName("全类名");  将字节码文件加载进内存，返回Class对象
+          2、类名.class: 通过类名属性Class获取
+          3、对象.getClass();   getClass()方法在Object类中定义
+
+
+
+
+
