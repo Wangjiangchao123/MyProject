@@ -11,6 +11,9 @@
     <modules>
         <module>springboot-easybatch</module>
         <module>springboot-easyexcel</module>
+        <module>poi-demo</module>
+        <module>poi-demo</module>
+        <module>poi-demo</module>
     </modules>
     <dependencies>
         <dependency>
