@@ -9,10 +9,62 @@
 
 
 Jdk预定义注解
+        @Override : 检测被该注解标注的方法是否继承自父类
+        @Deprecated： 该注解标识的内容表示已经过时，  但是还能用
+        @SuppressWarnings： 压制警告
+            一般传递参数 @SupressWarning("all");
+
 
 自定义注解
+           -格式
 
-在程序中使用注解
+                javac   编译
+                javap   反编译
+                public @interface 注解名称{}
+              本质：注解本质上就是一个接口，默认继承annotation。
+
+              属性：接口中可以定义的成员方法
+                    要求：
+                     1、基本数据类型
+                     2、String
+                     3、枚举
+                     4、以上类型的数组。
+               定义了属性：
+
+
+                *元注解
+                 @Target： 描述注解能够作用的位置
+                        ElementType：取值
+                                   Type：可以作用在类上
+                                   METHOD： 可以作用于方法上
+                                   FIELD： 作用于成员变量上
+                 @Retetion :  描述注解被保留的阶段。
+                         @Retention(RetentionPolicy.RUNTIME)      // 当前被描述的注解，会保留到class字节码文件中 ，并被Jvm读取到。
+
+                 @documented: 描述注解是否被抽取到api文档中。
+
+
+                 @Inherited： 描述注解是否被子类继承
+
+
+
+
+
+在程序中使用注解:  获取注解中定义的属性值
+        1、获取注解定义的位置的对象   Class 、 Method  Field
+        2、获取指定的注解
+              getAnnotation(Class)
+              在内存中生成了该注解接口的子类实现对象
+              public class ProImpl implements Pro{
+                    public String className(){
+                        return "com.example.demo";
+                    }
+                    public String methodName(){
+                        return "show";
+                    }
+
+              }
+        3、调用注解中抽象方法获取配置的属性值
 
 
 
