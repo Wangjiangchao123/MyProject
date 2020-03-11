@@ -14,6 +14,9 @@
         <module>poi-demo</module>
         <module>poi-demo</module>
         <module>poi-demo</module>
+        <module>shiro</module>
+        <module>shiro-demo</module>
+        <module>springboot-shiro</module>
     </modules>
     <dependencies>
         <dependency>

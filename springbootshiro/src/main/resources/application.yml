@@ -1,0 +1,19 @@
+server:
+  port: 10001
+
+
+spring:
+  application:
+    name: shiro
+  datasource:
+    url: jdbc:mysql://106.15.207.173:3306/shiro
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+  jpa:
+    database: mysql
+    show-sql: true
+    open-in-view: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
