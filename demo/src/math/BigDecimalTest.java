@@ -59,7 +59,19 @@ public class BigDecimalTest {
         BigDecimal subtract = a.subtract(b);
         System.out.println(subtract);
         BigDecimal max = a.max(b);
-        System.out.println("最大值"+max);
+        BigDecimal bigDecimal = max.setScale(4);
+        //获取位数
+        int scale = bigDecimal.scale();
+        System.out.println("位数"+scale);
+        System.out.println("最大值"+bigDecimal);
+        //设置小数点保留位数  和取舍
+        max.setScale(2,1);
+        String s = String.valueOf(max);
+        String[] split = s.split(".");
+        if (split[1].length() >4){
+            System.out.println("折标比例保留到小数点后4位");
+        }
+
         return add;
     }
 }
