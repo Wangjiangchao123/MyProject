@@ -18,6 +18,7 @@ public class RegularDemo {
 
         String pattern = "\\?[a-zA-Z]+\\?";
 
+        String b = null;
         Pattern r = Pattern.compile(pattern);
         List<String> list = new ArrayList<>();
         Matcher m = r.matcher(str);
@@ -35,6 +36,8 @@ public class RegularDemo {
         for (int i=0;i<list.size();i++){
           String a =   list.get(i).replace("?","");
             System.out.println(a);
+            //忽略大小写
+            a.equalsIgnoreCase(b);
         }
 
     }
