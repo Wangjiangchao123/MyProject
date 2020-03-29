@@ -18,6 +18,7 @@
         <module>shiro-demo</module>
         <module>springboot-shiro</module>
         <module>designfactory</module>
+        <module>springboot-batch</module>
     </modules>
     <dependencies>
         <dependency>

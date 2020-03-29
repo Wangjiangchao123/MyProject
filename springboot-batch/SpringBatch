@@ -1,0 +1,11 @@
+
+
+JobLauncher启动Job
+SpringBatch基于Job实现批处理：
+Step包括：ItemReader ItemProcessor ItemWriter
+
+
+1、父子Job，嵌套Job
+2、监听
+3、传参
+4、

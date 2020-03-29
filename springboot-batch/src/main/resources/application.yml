@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://106.15.207.173:3306/springbatch?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+
+
+  batch:
+    #初始化的时候执行
+    initialize-schema: always
+    schema: classpath:/org/springframework/batch/core/schema-mysql.sql
+#    job:
+#      names: parentJob
+  main:
+    allow-bean-definition-overriding: true
