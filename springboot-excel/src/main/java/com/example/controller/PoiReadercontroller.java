@@ -29,7 +29,7 @@ public class PoiReadercontroller {
 
 
     @PostMapping("/read/excel")
-    @ApiOperation(value ="多excel  不同对象  读取xlsx")
+    @ApiOperation(value ="多sheet页  不同对象  读取xlsx")
     public ResponseEntity readerExcel(@RequestParam MultipartFile file) throws IOException {
         XSSFWorkbook workbook = new XSSFWorkbook(file.getInputStream());
         XSSFSheet sheet = null;
