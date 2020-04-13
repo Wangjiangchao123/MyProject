@@ -1,0 +1,16 @@
+server:
+  port: 10001
+
+
+
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://106.15.207.173:3306/flyway?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+  flyway:
+    locations: classpath:/db
+    baseline-on-migrate: true
