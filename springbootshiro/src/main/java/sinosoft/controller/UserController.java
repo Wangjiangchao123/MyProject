@@ -99,9 +99,8 @@ public class UserController {
             Subject subject = SecurityUtils.getSubject();
 
             String id = subject.getSession().getId().toString();
-            //3、调用subject进行登录
+            //3、调用subject进行登录  返回seesionid
             subject.login(token);
-
             return "登录成功"+id;
         } catch (Exception e) {
             return "用户名或密码错误";

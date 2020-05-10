@@ -38,6 +38,7 @@ public class ShiroConfiguration {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager(customRealm);
         //将自定义的会话管理器  注册到安全管理器
         securityManager.setSessionManager(sessionManager());
+
         //将自定义的redis缓存管理器注册到安全管理器中
         securityManager.setCacheManager(redisCacheManager());
         return securityManager;
@@ -56,6 +57,10 @@ public class ShiroConfiguration {
         ShiroFilterFactoryBean filterFactoryBean = new ShiroFilterFactoryBean();
         //2.设置安全管理器
         filterFactoryBean.setSecurityManager(securityManager);
+        /**
+         * 添加过滤拦截
+         *
+         */
         filterFactoryBean.setLoginUrl("/autherror?code=1");//跳转 url 地址
         filterFactoryBean.setUnauthorizedUrl("/autherror?code=2");//未授权页面
         //3.通用配置（跳转登录页面，为授权跳转页面）
@@ -74,7 +79,7 @@ public class ShiroConfiguration {
         //使用过滤器的形式  配置请求地址的依赖权限
         // filterMap.put("/user/home","perms[user-home]");
         //使用过滤器的形式  配置请求地址依赖角色
-        filterMap.put("/user/home", "roles[系统管理员]");
+//        filterMap.put("/user/home", "roles[系统管理员]");
 
         filterMap.put("/user/**", "authc");//认证之后可以访问
 
@@ -91,6 +96,8 @@ public class ShiroConfiguration {
         return advisor;
     }
 
+
+
     //  自定义会话管理器
     @Value("${spring.redis.host}")
     private String host;
@@ -103,6 +110,7 @@ public class ShiroConfiguration {
         RedisManager redisManager = new RedisManager();
         redisManager.setHost(host);
         redisManager.setPort(port);
+        redisManager.setDatabase(9);
         return redisManager;
     }
     //2.SessionDao
@@ -120,7 +128,6 @@ public class ShiroConfiguration {
         return sessionManager;
     }
     //4.缓存管理器
-
     public RedisCacheManager redisCacheManager(){
         RedisCacheManager redisCacheManager = new RedisCacheManager();
         redisCacheManager.setRedisManager(redisManager());

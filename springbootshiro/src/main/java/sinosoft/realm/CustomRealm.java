@@ -61,6 +61,7 @@ public class CustomRealm extends AuthorizingRealm {
                     perms.add(perm.getCode());
                 }
         }
+        //获取用户权限和角色
         info.setStringPermissions(perms);
         info.setRoles(roles);
         return info;

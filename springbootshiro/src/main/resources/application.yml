@@ -15,5 +15,14 @@ spring:
     show-sql: true
     open-in-view: true
   redis:
-    host: 127.0.0.1
+    host: 106.15.207.173
     port: 6379
+
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    mode: HTML
